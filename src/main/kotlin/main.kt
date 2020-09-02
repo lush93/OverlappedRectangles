@@ -11,14 +11,16 @@ fun testOverlap(){
     val p2 = Point(2F,4F)
     val p3 = Point(1F, 3F)
     val p4 = Point(5F, 5F)
-    val p5 = Point(0F, 2F)
-    val p6 = Point(2F, 0F)
-    val p7 = Point(1F, 3F)
-    val p8 = Point(3F, 1F)
-    val p9 = Point(7F, 15F)
-    val p10 = Point(13F, 8F)
-    val p11 = Point(10F, 20F)
-    val p12 = Point(12F, 8F)
+
+    val p5 = Point(0F, 0F)
+    val p6 = Point(2F, 2F)
+    val p7 = Point(1F, 1F)
+    val p8 = Point(3F, 3F)
+
+    val p9 = Point(7F, 8F)
+    val p10 = Point(13F, 15F)
+    val p11 = Point(10F, 8F)
+    val p12 = Point(12F, 20F)
 
     // Given overlapping rectangles: rect1 and rect2
     val rect1 = Rect(p1, p2)
@@ -26,7 +28,7 @@ fun testOverlap(){
 
     // Do isRectangleOverlap() on rect1 and rect2
     // Assert the results to be true
-    assert(rect1.isRectangleOverlap(rect2) && rect2.isRectangleOverlap(rect1))
+    println(rect1.isRectangleOverlap(rect2) && rect2.isRectangleOverlap(rect1))
 
     // Given overlapping rectangles: rect3 and rect4
     val rect3 = Rect(p5, p6)
@@ -34,7 +36,7 @@ fun testOverlap(){
 
     // Do isRectangleOverlap() on rect3 and rect4
     // Assert the results to be true
-    assert(rect3.isRectangleOverlap(rect4) && rect4.isRectangleOverlap(rect3))
+    println(rect3.isRectangleOverlap(rect4) && rect4.isRectangleOverlap(rect3))
 
     // Given overlapping rectangles: rect5 and rect6
     val rect5 = Rect(p9, p10)
@@ -42,17 +44,17 @@ fun testOverlap(){
 
     // Do isRectangleOverlap() on rect5 and rect6
     // Assert the results to be true
-    assert(rect5.isRectangleOverlap(rect6) && rect6.isRectangleOverlap(rect5))
+    println(rect5.isRectangleOverlap(rect6) && rect6.isRectangleOverlap(rect5))
 }
 
 fun testNonOverlap(){
-    val p1 = Point(0F,2F)
-    val p2 = Point(1F,1F)
+    val p1 = Point(0F,1F)
+    val p2 = Point(1F,2F)
     val p3 = Point(-2F, -3F)
     val p4 = Point(0F, 2F)
-    val p5 = Point(0F,1F)
-    val p6 = Point(1F,0F)
-    val p7 = Point(2F, 0F)
+    val p5 = Point(0F,0F)
+    val p6 = Point(1F,1F)
+    val p7 = Point(3F, 4F)
 
 
     // Given non-overlapping rectangles: rect1 and rect2
@@ -61,7 +63,7 @@ fun testNonOverlap(){
 
     // Do negation on isRectangleOverlap() on rect1 and rect2
     // Assert the results to be true
-    assert(!rect1.isRectangleOverlap(rect2) && !rect2.isRectangleOverlap(rect1))
+    println(!rect1.isRectangleOverlap(rect2) && !rect2.isRectangleOverlap(rect1))
 
     // Given non-overlapping rectangles: rect3 and rect4
     val rect3 = Rect(p5, p6)
@@ -69,5 +71,5 @@ fun testNonOverlap(){
 
     // Do negation on isRectangleOverlap() on rect3 and rect4
     // Assert the results to be true
-    assert(!rect3.isRectangleOverlap(rect4) && !rect4.isRectangleOverlap(rect3))
+    println(!rect3.isRectangleOverlap(rect4) && !rect4.isRectangleOverlap(rect3))
 }

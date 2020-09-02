@@ -1,8 +1,8 @@
 package geometry
 
-class Rect(private val topLeft: Point, private val bottomRight: Point) {
+class Rect(private val bottomLeft: Point, private val topRight: Point) {
     fun isRectangleOverlap(rect: Rect): Boolean{
-        return !(bottomRight.y >= rect.topLeft.y || rect.bottomRight.y >= topLeft.y
-                || bottomRight.x <= rect.topLeft.x || rect.bottomRight.x <= topLeft.x)
+        return !(bottomLeft.y >= rect.topRight.y || rect.bottomLeft.y >= topRight.y
+                || topRight.x <= rect.bottomLeft.x || rect.topRight.x <= bottomLeft.x)
     }
 }
